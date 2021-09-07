@@ -1,7 +1,14 @@
 // @ts-check
 const { withExpo } = require('@expo/next-adapter');
+const withFonts = require('next-fonts');
+// @ts-ignore
+const withImages = require('next-images');
 const withPlugins = require('next-compose-plugins');
 const withTM = require('next-transpile-modules')([
+	'moti',
+	'@motify/core',
+	'@motify/components',
+	'react-native-reanimated',
 	'dripsy',
 	'@dripsy/core',
 	'react-native-web',
@@ -13,6 +20,6 @@ const withTM = require('next-transpile-modules')([
 const nextConfig = {};
 
 module.exports = withPlugins(
-	[withTM, [withExpo, { projectRoot: __dirname }]],
+	[withTM, withFonts, withImages, [withExpo, { projectRoot: __dirname }]],
 	nextConfig
 );

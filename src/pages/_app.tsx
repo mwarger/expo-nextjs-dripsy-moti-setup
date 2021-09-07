@@ -1,8 +1,10 @@
+import 'raf/polyfill'; // add this at the top
+import dynamic from 'next/dynamic';
 import { DripsyProvider } from 'dripsy';
 import type { AppProps /*, AppContext */ } from 'next/app';
 import { theme } from '../theme/theme';
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<DripsyProvider
@@ -15,3 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		</>
 	);
 }
+
+export default dynamic(() => Promise.resolve(App), {
+	ssr: false,
+});
