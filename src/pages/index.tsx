@@ -23,17 +23,4 @@ export default function App() {
 			</AnimatePresence>
 		</View>
 	);
-	// return (
-
-	// 	<View from={{ opacity: 0 }} animate={{ opacity: 1 }}>
-	// 		<H1
-	// 			sx={{
-	// 				color: 'text', // #000 from theme.colors
-	// 				fontSize: 2, // 24px from theme.fontSizes
-	// 			}}
-	// 		>
-	// 			Hello world!
-	// 		</H1>
-	// 	</View>
-	// );
 }
