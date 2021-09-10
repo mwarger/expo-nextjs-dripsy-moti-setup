@@ -1,20 +1,27 @@
-// @generated: @expo/next-adapter@2.1.52
-// Learn more: https://docs.expo.dev/guides/using-nextjs/
-
 module.exports = function (api) {
-	api.cache(true);
+	// Detect web usage (this may change in the future if Next.js changes the loader)
+	const isWeb = api.caller(
+		caller =>
+			caller &&
+			(caller.name === 'babel-loader' ||
+				caller.name === 'next-babel-turbo-loader')
+	);
 
 	return {
-		presets: ['@expo/next-adapter/babel'],
+		presets: [
+			isWeb && 'next/babel',
+			[
+				'babel-preset-expo',
+				{
+					web: { useTransformReactJsxExperimental: true },
+				},
+			],
+		].filter(Boolean),
 		plugins: [
-			'@babel/plugin-proposal-class-properties',
+			['@babel/plugin-proposal-class-properties', { loose: true }],
+			['@babel/plugin-proposal-private-methods', { loose: true }],
+			['@babel/plugin-proposal-private-property-in-object', { loose: true }],
 			'react-native-reanimated/plugin',
-		],
-		overrides: [
-			{
-				test: './node_modules/dripsy/*',
-				plugins: ['@babel/plugin-transform-react-jsx'],
-			},
 		],
 	};
 };
