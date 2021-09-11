@@ -6,6 +6,7 @@
 - NextJS (https://nextjs.org/)
 - Dripsy (https://github.com/nandorojo/dripsy)
 - Moti (https://moti.fyi/)
+- expo-next-react-navigation (the react-navigation v5 compatible version) (https://github.com/nandorojo/expo-next-react-navigation/tree/v5)
 
 ## Background
 
