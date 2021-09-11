@@ -29,4 +29,4 @@ I ended up having to update the babel config (https://github.com/mwarger/expo-ne
 
 Along the way I also tried updating a couple dependencies, like NextJS (there was no rhyme or reason to this, just trying things).
 
-![googling stuff](https://imgflip.com/i/5ml6c5 'Google stuff')
+![googling stuff](https://i.imgflip.com/5ml6c5.jpg 'Google stuff')
