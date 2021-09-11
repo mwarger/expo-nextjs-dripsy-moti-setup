@@ -1,4 +1,5 @@
 import { Button, Text, View } from 'dripsy';
+import { Link } from 'expo-next-react-navigation';
 import { AnimatePresence, MotiView } from 'moti';
 import React, { useState } from 'react';
 
@@ -8,6 +9,9 @@ export default function App() {
 	return (
 		<View>
 			<Button onPress={() => setVisible(!visible)} title='Toggle' />
+			<Link style={{ color: 'green' }} routeName='profile'>
+				Click to go to profile
+			</Link>
 			<AnimatePresence>
 				{visible && (
 					<MotiView
