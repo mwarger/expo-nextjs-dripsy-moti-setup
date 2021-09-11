@@ -6,6 +6,7 @@
 - NextJS (https://nextjs.org/)
 - Dripsy (https://github.com/nandorojo/dripsy)
 - Moti (https://moti.fyi/)
+- expo-next-react-navigation (the react-navigation v5 compatible version) (https://github.com/nandorojo/expo-next-react-navigation/tree/v5)
 
 ## Background
 
@@ -30,3 +31,16 @@ I ended up having to update the babel config (https://github.com/mwarger/expo-ne
 Along the way I also tried updating a couple dependencies, like NextJS (there was no rhyme or reason to this, just trying things).
 
 ![googling stuff](https://i.imgflip.com/5ml6c5.jpg 'Google stuff')
+
+## Navigation
+
+Again, more googling after trying `expo-next-react-navigation` and having it blow up with an error saying:
+
+`TypeError: undefined is not an object (evaluating 'this._callListeners.bind')`
+
+I found this comment, but it's old and ended up breaking things: https://github.com/react-navigation/react-navigation/issues/5854#issuecomment-493775447
+This comment was also not helpful: https://github.com/react-navigation/react-navigation/issues/5825#issuecomment-496560834
+
+However, two comments above that one (https://github.com/react-navigation/react-navigation/issues/5825#issuecomment-484776170) was someone who added a FIXED comment, and this lined up with with this stack overflow issue and another comment: https://stackoverflow.com/a/58532316/1613200
+
+Indeed, adding `@babel/plugin-transform-flow-strip-types` appears to solve the issue. This seems crazy to me, since I would assume the build output of something like this wouldn't have flow types as part of it... but again, thanks google and pure luck.
