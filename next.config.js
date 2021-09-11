@@ -12,6 +12,7 @@ const withTM = require('next-transpile-modules')([
 	'dripsy',
 	'@dripsy/core',
 	'react-native-web',
+	'expo-next-react-navigation',
 ]);
 
 /**

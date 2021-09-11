@@ -1,7 +1,10 @@
 {
 	"dependencies": {
+		"@react-navigation/native": "^5.9.4",
+		"@react-navigation/stack": "^5.14.4",
 		"dripsy": "^2.3.6",
 		"expo": "~42.0.0",
+		"expo-next-react-navigation": "^1.1.14",
 		"moti": "^0.14.2",
 		"next": "^11.1.2",
 		"next-fonts": "^1.5.1",
@@ -10,7 +13,10 @@
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+		"react-native-gesture-handler": "~1.10.2",
 		"react-native-reanimated": "~2.2.0",
+		"react-native-safe-area-context": "3.2.0",
+		"react-native-screens": "~3.4.0",
 		"react-native-web": "^0.17.1"
 	},
 	"devDependencies": {
